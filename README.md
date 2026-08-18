@@ -11,8 +11,9 @@ version control, and cloud infrastructure design.
 
 | Project / Exercise | Description | Key Concepts |
 |---|---|---|
-| [Terraform VPC](./Terraform%20VPC%20-%2002/)| AWS VPC infrastructure provisioned with Terraform | VPC, subnets, route tables, Internet Gateway, Terraform |
+| [Terraform VPC](./Terraform%20VPC%20-%2002/) | AWS VPC infrastructure provisioned with Terraform | VPC, subnets, route tables, Internet Gateway, Terraform |
 | [HCL Fundamentals](./HashiCorp%20Configuration%20Language%20-%2004/) | Exploration of HashiCorp Configuration Language syntax | Resources, data sources, variables, outputs, locals, modules |
+| [Terraform S3 Bucket](./terraform%20S3%20Bucket%20-%2005/) | AWS S3 bucket provisioned and managed with Terraform | AWS provider, Random provider, S3, resource references, outputs, Terraform state |
 
 ## Technologies
 
@@ -36,8 +37,11 @@ Through these projects and exercises, I am developing experience with:
 - Local values
 - Terraform modules
 - Terraform state
+- Resource dependencies and references
+- `terraform init`
 - `terraform plan`
 - `terraform apply`
+- `terraform destroy`
 - `terraform validate`
 - `terraform fmt`
 - Version control with Git
@@ -46,10 +50,13 @@ Through these projects and exercises, I am developing experience with:
 
 ```text
 terraform/
-├── terraform VPC/
+├── Terraform VPC - 02/
 │   └── AWS VPC infrastructure
 │
 ├── HashiCorp Configuration Language - 04/
 │   └── HCL fundamentals
+│
+├── terraform S3 Bucket - 05/
+│   └── AWS S3 bucket infrastructure
 │
 └── README.md
