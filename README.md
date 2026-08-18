@@ -11,7 +11,7 @@ version control, and cloud infrastructure design.
 
 | Project / Exercise | Description | Key Concepts |
 |---|---|---|
-| [Terraform VPC](./terraform%20VPC/) | AWS VPC infrastructure provisioned with Terraform | VPC, subnets, route tables, Internet Gateway, Terraform |
+| [Terraform VPC](./Terraform%20VPC%20-%2002/ | AWS VPC infrastructure provisioned with Terraform | VPC, subnets, route tables, Internet Gateway, Terraform |
 | [HCL Fundamentals](./HashiCorp%20Configuration%20Language%20-%2004/) | Exploration of HashiCorp Configuration Language syntax | Resources, data sources, variables, outputs, locals, modules |
 
 ## Technologies
