@@ -17,6 +17,7 @@ version control, and cloud infrastructure design.
 | [Multi-Region S3](./Terraform%20Multi-Region%20S3%20-%2009/) | S3 buckets deployed across multiple AWS regions using separate AWS provider configurations | Provider aliases, multiple provider configurations, multi-region deployments |
 | [NGINX Server on AWS](./NGINX%20Server%20on%20AWS%20-%2010/) | AWS VPC and EC2 infrastructure deployed with Terraform and configured to run an NGINX web server | VPC, subnets, route tables, Internet Gateway, security groups, EC2, AMI data sources, user data |
 | [S3 Static Website](./S3%20Static%20Website/) | Static website hosted on Amazon S3 and managed with Terraform | S3, bucket policies, public access, static website hosting, S3 objects, Terraform outputs |
+| [Input Variables](./Input%20Variables%20-%2015/) | EC2 instance configuration managed through Terraform input variables and validation | Input variables, variable types, defaults, validation rules, AMI data sources |
 
 ## Technologies
 
@@ -60,6 +61,12 @@ Through these projects and exercises, I am developing experience with:
 - S3 objects
 - Object content types
 - Git / GitHub version control
+- Input variables 
+- Variable types 
+- Variable defaults 
+- Variable validation 
+- Variable overrides 
+- AMI data sources
 
 ## Repository Structure
 
@@ -82,5 +89,7 @@ terraform/
 |
 ├── S3 Static Website/
 │   └── Static website hosted on Amazon S3 with Terraform
+│
+├── Input Variables - 15/ │ └── EC2 instance configuration using input variables and validation 
 │
 └── README.md
