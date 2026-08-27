@@ -21,6 +21,7 @@ version control, and cloud infrastructure design.
 | [Using Objects for Volume Configuration](./Using%20Objects%20for%20Volume%20Configuration%20-%2016/) | Refactored EC2 configuration using structured variables and flexible tagging | Terraform objects, maps, `merge()` |
 | [Working with tfvars](./Working%20with%20tfvar%20-%2017/) | Managed environment-specific Terraform configurations using variable definition files | `.tfvars` files, variable overrides, environment configuration |
 | [Working with Locals](./Working%20with%20Locals%20-%2018/) | Centralized reusable configuration values and common resource tags using Terraform locals | Locals, common tags, local objects, `merge()`, Random ID, S3 |
+| [Working with Outputs](./Working%20with%20Outputs%20-%2020/) | Exposed Terraform-managed resource values using output blocks | Terraform outputs, output values, `terraform output`, `-raw` |
 
 ## Technologies
 
@@ -41,12 +42,13 @@ version control, and cloud infrastructure design.
 - Terraform resources & data sources
 - Input variables, types, defaults & validation
 - Variable overrides & `.tfvars` files
-- Outputs & local values & local objects
+- Local values & local objects
 - Common tagging with `merge()`
 - Terraform modules
 - Terraform state
 - Terraform workflow: `init`, `plan`, `apply`, `destroy`
 - Configuration validation & formatting: `validate`, `fmt`
+- Outputs, output values & `terraform output`
 
 ### AWS Infrastructure
 
@@ -98,5 +100,8 @@ terraform/
 │
 ├── Working with Locals - 18/
 │   └── Reusable local values, common tags, and S3 configuration
+│
+├── Working with Outputs - 20/
+│   └── Terraform outputs and retrieving resource values
 │
 └── README.md
