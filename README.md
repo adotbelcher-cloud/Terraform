@@ -20,6 +20,7 @@ version control, and cloud infrastructure design.
 | [Input Variables](./Input%20Variables%20-%2015/) | EC2 instance configuration managed through Terraform input variables and validation | Input variables, variable types, defaults, validation rules, AMI data sources |
 | [Using Objects for Volume Configuration](./Using%20Objects%20for%20Volume%20Configuration%20-%2016/) | Refactored EC2 configuration using structured variables and flexible tagging | Terraform objects, maps, `merge()` |
 | [Working with tfvars](./Working%20with%20tfvar%20-%2017/) | Managed environment-specific Terraform configurations using variable definition files | `.tfvars` files, variable overrides, environment configuration |
+| [Working with Locals](./Working%20with%20Locals%20-%2018/) | Centralized reusable configuration values and common resource tags using Terraform locals | Locals, common tags, local objects, `merge()`, Random ID, S3 |
 
 ## Technologies
 
@@ -32,13 +33,16 @@ version control, and cloud infrastructure design.
 
 ### Terraform & Infrastructure
 
+### Terraform & Infrastructure
+
 - Infrastructure as Code (IaC)
 - Terraform providers & provider configuration
 - Provider aliases & multi-region deployments
 - Terraform resources & data sources
 - Input variables, types, defaults & validation
 - Variable overrides & `.tfvars` files
-- Outputs & local values
+- Outputs & local values & local objects
+- Common tagging with `merge()`
 - Terraform modules
 - Terraform state
 - Terraform workflow: `init`, `plan`, `apply`, `destroy`
@@ -55,6 +59,7 @@ version control, and cloud infrastructure design.
 - S3 static website hosting
 - S3 bucket policies & public access configuration
 - S3 objects & content types
+- S3 bucket naming with Random ID
 
 ### Development & Version Control
 
@@ -90,5 +95,8 @@ terraform/
 │
 ├── Working with tfvar - 17/
 │   └── Environment-specific configuration using .tfvars files
+│
+├── Working with Locals - 18/
+│   └── Reusable local values, common tags, and S3 configuration
 │
 └── README.md
