@@ -18,6 +18,7 @@ version control, and cloud infrastructure design.
 | [NGINX Server on AWS](./NGINX%20Server%20on%20AWS%20-%2010/) | AWS VPC and EC2 infrastructure deployed with Terraform and configured to run an NGINX web server | VPC, subnets, route tables, Internet Gateway, security groups, EC2, AMI data sources, user data |
 | [S3 Static Website](./S3%20Static%20Website/) | Static website hosted on Amazon S3 and managed with Terraform | S3, bucket policies, public access, static website hosting, S3 objects, Terraform outputs |
 | [Input Variables](./Input%20Variables%20-%2015/) | EC2 instance configuration managed through Terraform input variables and validation | Input variables, variable types, defaults, validation rules, AMI data sources |
+| [Using Objects for Volume Configuration](./Using%20Objects%20for%20Volume%20Configuration%20-%2016/) | Refactored EC2 configuration using structured variables and flexible tagging | Terraform objects, maps, `merge()` |
 
 ## Technologies
 
@@ -81,5 +82,9 @@ terraform/
 │   └── Static website hosted on Amazon S3 with Terraform
 │
 ├── Input Variables - 15/ │ └── EC2 instance configuration using input variables and validation 
+│
+│
+├── Using Objects for Volume Configuration - 16/
+│   └── EC2 configuration using objects, maps, and flexible tagging
 │
 └── README.md
