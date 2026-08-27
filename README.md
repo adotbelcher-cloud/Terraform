@@ -19,6 +19,7 @@ version control, and cloud infrastructure design.
 | [S3 Static Website](./S3%20Static%20Website/) | Static website hosted on Amazon S3 and managed with Terraform | S3, bucket policies, public access, static website hosting, S3 objects, Terraform outputs |
 | [Input Variables](./Input%20Variables%20-%2015/) | EC2 instance configuration managed through Terraform input variables and validation | Input variables, variable types, defaults, validation rules, AMI data sources |
 | [Using Objects for Volume Configuration](./Using%20Objects%20for%20Volume%20Configuration%20-%2016/) | Refactored EC2 configuration using structured variables and flexible tagging | Terraform objects, maps, `merge()` |
+| [Working with tfvars](./Working%20with%20tfvar%20-%2017/) | Managed environment-specific Terraform configurations using variable definition files | `.tfvars` files, variable overrides, environment configuration |
 
 ## Technologies
 
@@ -36,7 +37,7 @@ version control, and cloud infrastructure design.
 - Provider aliases & multi-region deployments
 - Terraform resources & data sources
 - Input variables, types, defaults & validation
-- Variable overrides
+- Variable overrides & `.tfvars` files
 - Outputs & local values
 - Terraform modules
 - Terraform state
@@ -81,10 +82,13 @@ terraform/
 ├── S3 Static Website/
 │   └── Static website hosted on Amazon S3 with Terraform
 │
-├── Input Variables - 15/ │ └── EC2 instance configuration using input variables and validation 
-│
+├── Input Variables - 15/ 
+│   └── EC2 instance configuration using input variables and validation 
 │
 ├── Using Objects for Volume Configuration - 16/
 │   └── EC2 configuration using objects, maps, and flexible tagging
+│
+├── Working with tfvar - 17/
+│   └── Environment-specific configuration using .tfvars files
 │
 └── README.md
