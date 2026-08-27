@@ -28,45 +28,35 @@ version control, and cloud infrastructure design.
 - **Linux / WSL**
 - **Visual Studio Code**
 
-## Terraform Concepts
-
-Through these projects and exercises, I am developing experience with:
+### Terraform & Infrastructure
 
 - Infrastructure as Code (IaC)
-- Terraform providers
-- Multiple provider configurations
-- Provider aliases
-- Multi-region AWS deployments
-- Terraform resources
-- Terraform data sources
-- Input variables
-- Outputs
-- Local values
+- Terraform providers & provider configuration
+- Provider aliases & multi-region deployments
+- Terraform resources & data sources
+- Input variables, types, defaults & validation
+- Variable overrides
+- Outputs & local values
 - Terraform modules
 - Terraform state
-- `terraform init`
-- `terraform plan`
-- `terraform apply`
-- `terraform destroy`
-- `terraform validate`
-- `terraform fmt`
+- Terraform workflow: `init`, `plan`, `apply`, `destroy`
+- Configuration validation & formatting: `validate`, `fmt`
+
+### AWS Infrastructure
+
+- Amazon VPCs, subnets & routing
 - AWS EC2
 - Amazon Machine Images (AMIs)
-- EC2 user data
-- Cloud-init / instance bootstrapping
+- EC2 user data & cloud-init
 - AWS security groups
+- Amazon S3
 - S3 static website hosting
-- S3 bucket policies
-- S3 public access configuration
-- S3 objects
-- Object content types
+- S3 bucket policies & public access configuration
+- S3 objects & content types
+
+### Development & Version Control
+
 - Git / GitHub version control
-- Input variables 
-- Variable types 
-- Variable defaults 
-- Variable validation 
-- Variable overrides 
-- AMI data sources
 
 ## Repository Structure
 
