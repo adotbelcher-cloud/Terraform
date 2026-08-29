@@ -22,6 +22,7 @@ version control, and cloud infrastructure design.
 | [Working with tfvars](./Working%20with%20tfvar%20-%2017/) | Managed environment-specific Terraform configurations using variable definition files | `.tfvars` files, variable overrides, environment configuration |
 | [Working with Locals](./Working%20with%20Locals%20-%2018/) | Centralized reusable configuration values and common resource tags using Terraform locals | Locals, common tags, local objects, `merge()`, Random ID, S3 |
 | [Working with Outputs](./Working%20with%20Outputs%20-%2020/) | Exposed Terraform-managed resource values using output blocks | Terraform outputs, output values, `terraform output`, `-raw` |
+| [For Expressions with Lists](./For%20Expressions%20with%20Lists%20-%2022/) | Manipulated lists and lists of objects using Terraform for expressions | `for` expressions, list transformation, filtering, object attributes |
 
 ## Technologies
 
@@ -49,6 +50,8 @@ version control, and cloud infrastructure design.
 - Terraform workflow: `init`, `plan`, `apply`, `destroy`
 - Configuration validation & formatting: `validate`, `fmt`
 - Outputs, output values & `terraform output`
+- `for` expressions & list manipulation
+- List filtering & object attribute extraction
 
 ### AWS Infrastructure
 
@@ -103,5 +106,8 @@ terraform/
 │
 ├── Working with Outputs - 20/
 │   └── Terraform outputs and retrieving resource values
+│
+├── For Expressions with Lists - 22/
+│   └── List manipulation using Terraform for expressions
 │
 └── README.md
