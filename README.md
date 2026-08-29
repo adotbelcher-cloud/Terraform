@@ -23,7 +23,7 @@ version control, and cloud infrastructure design.
 | [Working with Locals](./Working%20with%20Locals%20-%2018/) | Centralized reusable configuration values and common resource tags using Terraform locals | Locals, common tags, local objects, `merge()`, Random ID, S3 |
 | [Working with Outputs](./Working%20with%20Outputs%20-%2020/) | Exposed Terraform-managed resource values using output blocks | Terraform outputs, output values, `terraform output`, `-raw` |
 | [For Expressions with Lists](./For%20Expressions%20with%20Lists%20-%2022/) | Manipulated lists and lists of objects using Terraform for expressions | `for` expressions, list transformation, filtering, object attributes |
-| [For Expressions with Maps](./For%20Expressions%20with%20Maps%20-%2023/) | Transformed and filtered map values using Terraform for expressions | `for` expressions, maps, key-value iteration, map filtering |
+| [For Expressions with Maps](./For%20Expressions%20with%20Maps%20-%2023/) | Transformed, filtered, and restructured maps and lists using Terraform for expressions | `for` expressions, maps, list-to-map transformations, filtering, duplicate keys, `keys()` |
 
 ## Technologies
 
@@ -52,6 +52,7 @@ version control, and cloud infrastructure design.
 - Configuration validation & formatting: `validate`, `fmt`
 - Outputs, output values & `terraform output`
 - `for` expressions & collection manipulation
+- Collection transformations between lists and maps
 - List filtering & object attribute extraction
 
 ### AWS Infrastructure
@@ -112,6 +113,6 @@ terraform/
 │   └── List manipulation using Terraform for expressions
 │
 ├── For Expressions with Maps - 23/
-│   └── Map transformation and filtering using Terraform for expressions
+│   └── Map and list transformations using Terraform for expressions
 │
 └── README.md
