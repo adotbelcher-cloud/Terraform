@@ -1,32 +1,64 @@
+# ============================================================
+# NETWORKING
+# ============================================================
+# Creates the basic AWS networking infrastructure for this
+# project:
+#
+# VPC
+# └── Multiple subnets
+#
+# The subnet count and CIDR blocks are generated dynamically
+# using the count meta-argument.
+
+
+# ============================================================
+# VPC
+# ============================================================
+# Creates the project's VPC using a /16 CIDR block.
+#
+# The local.project value is used for both tags so the
+# resources can be easily identified in AWS.
+
 resource "aws_vpc" "main" {
-  # Create a VPC with a /16 CIDR block.
   cidr_block = "10.0.0.0/16"
 
   tags = {
-    # Use the local project name for consistent resource tagging.
     Project = local.project
     Name    = local.project
   }
 }
 
+
+# ============================================================
+# SUBNETS
+# ============================================================
+# Creates multiple subnets inside the VPC.
+#
+# The number of subnets is controlled by var.subnet_count.
+# For example:
+#
+# subnet_count = 2
+#   → aws_subnet.main[0]
+#   → aws_subnet.main[1]
+#
+# count.index provides the index of each subnet and is used
+# to generate unique CIDR blocks and resource names.
+
 resource "aws_subnet" "main" {
-  # Use the input variable so the number of subnets can be changed
-  # without modifying the resource configuration.
   count = var.subnet_count
 
-  # Attach every subnet to the VPC created above.
   vpc_id = aws_vpc.main.id
 
-  # Use count.index to generate a unique /24 network for each subnet.
-  # [0] becomes 10.0.0.0/24 and [1] becomes 10.0.1.0/24.
+  # Generate a unique /24 CIDR block for each subnet.
+  #
+  # [0] → 10.0.0.0/24
+  # [1] → 10.0.1.0/24
+  # [2] → 10.0.2.0/24
+
   cidr_block = "10.0.${count.index}.0/24"
 
   tags = {
-    # Apply the shared project tag to every subnet.
     Project = local.project
-
-    # count.index identifies the individual subnet:
-    # 0 for the first subnet, 1 for the second.
-    Name = "${local.project}-${count.index}"
+    Name    = "${local.project}-${count.index}"
   }
 }

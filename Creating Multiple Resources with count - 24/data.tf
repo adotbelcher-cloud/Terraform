@@ -1,9 +1,30 @@
-data "aws_ami" "ubuntu" {
-  # Select the most recent matching Ubuntu AMI.
-  most_recent = true
+# ============================================================
+# AMI DATA SOURCES
+# ============================================================
+# Data sources allow Terraform to look up existing AWS
+# resources without creating them.
+#
+# We use an AMI data source instead of hard-coding an AMI ID.
+# This allows Terraform to find the appropriate image
+# automatically for the current AWS region.
 
-  # Canonical is the owner of the official Ubuntu AMIs.
-  owners = ["099720109477"]
+
+# ============================================================
+# UBUNTU AMI
+# ============================================================
+# Looks up the most recent Ubuntu 22.04 AMD64 server AMI
+# published by Canonical.
+#
+# The resulting AMI ID is available through:
+# data.aws_ami.ubuntu.id
+#
+# Other parts of the configuration can reference this AMI
+# through the local.ami_ids map instead of using the AMI ID
+# directly.
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners      = ["099720109477"]
 
   filter {
     # Match Ubuntu 22.04 AMD64 server images.
@@ -12,7 +33,7 @@ data "aws_ami" "ubuntu" {
   }
 
   filter {
-    # Ensure the AMI uses HVM virtualization.
+    # Only select AMIs using HVM virtualization.
     name   = "virtualization-type"
     values = ["hvm"]
   }
