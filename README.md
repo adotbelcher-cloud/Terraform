@@ -24,6 +24,7 @@ version control, and cloud infrastructure design.
 | [Working with Outputs](./Working%20with%20Outputs%20-%2020/) | Exposed Terraform-managed resource values using output blocks | Terraform outputs, output values, `terraform output`, `-raw` |
 | [For Expressions with Lists](./For%20Expressions%20with%20Lists%20-%2022/) | Manipulated lists and lists of objects using Terraform for expressions | `for` expressions, list transformation, filtering, object attributes |
 | [For Expressions with Maps](./For%20Expressions%20with%20Maps%20-%2023/) | Transformed, filtered, and restructured maps and lists using Terraform for expressions | `for` expressions, maps, list-to-map transformations, filtering, duplicate keys, `keys()` |
+| [Creating Multiple Subnets with count](./Creating%20Multiple%20Subnets%20with%20count%20-%2024/) | Created multiple AWS subnets from a single Terraform resource using the `count` meta-argument | `count`, `count.index`, input variables, VPCs, subnets, CIDR blocks |
 
 ## Technologies
 
@@ -54,6 +55,8 @@ version control, and cloud infrastructure design.
 - `for` expressions & collection manipulation
 - Collection transformations between lists and maps
 - List filtering & object attribute extraction
+- `count` meta-argument & `count.index`
+- Dynamic resource creation
 
 ### AWS Infrastructure
 
@@ -114,5 +117,8 @@ terraform/
 │
 ├── For Expressions with Maps - 23/
 │   └── Map and list transformations using Terraform for expressions
+│
+├── Creating Multiple Subnets with count - 24/
+│   └── Multiple AWS subnets created using Terraform count
 │
 └── README.md
