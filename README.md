@@ -1,30 +1,21 @@
 # Terraform — AWS Infrastructure & Learning Projects
 
-This repository documents my hands-on experience learning and applying
-Terraform to provision and manage AWS infrastructure.
+This repository documents my hands-on experience building and managing AWS infrastructure with Terraform.
 
-The goal of this repository is to demonstrate practical experience with
-Infrastructure as Code (IaC), AWS services, Terraform configuration,
-version control, and cloud infrastructure design.
+The projects and exercises demonstrate practical experience with Infrastructure as Code (IaC), AWS services, Terraform configuration, reusable infrastructure patterns, version control, and cloud infrastructure design.
 
-## Projects & Exercises
+
+## Projects & Key Exercises
 
 | Project / Exercise | Description | Key Concepts |
 |---|---|---|
-| [Terraform VPC](./Terraform%20VPC%20-%2002/) | AWS VPC infrastructure provisioned with Terraform | VPC, subnets, route tables, Internet Gateway, Terraform |
-| [HCL Fundamentals](./HashiCorp%20Configuration%20Language%20-%2004/) | Exploration of HashiCorp Configuration Language syntax | Resources, data sources, variables, outputs, locals, modules |
-| [Terraform S3 Bucket](./Terraform%20S3%20Bucket%20-%2005/) | AWS S3 bucket provisioned and managed with Terraform | AWS provider, Random provider, S3, resource references, outputs, Terraform state |
-| [Multi-Region S3](./Terraform%20Multi-Region%20S3%20-%2009/) | S3 buckets deployed across multiple AWS regions using separate AWS provider configurations | Provider aliases, multiple provider configurations, multi-region deployments |
-| [NGINX Server on AWS](./NGINX%20Server%20on%20AWS%20-%2010/) | AWS VPC and EC2 infrastructure deployed with Terraform and configured to run an NGINX web server | VPC, subnets, route tables, Internet Gateway, security groups, EC2, AMI data sources, user data |
-| [S3 Static Website](./S3%20Static%20Website/) | Static website hosted on Amazon S3 and managed with Terraform | S3, bucket policies, public access, static website hosting, S3 objects, Terraform outputs |
-| [Input Variables](./Input%20Variables%20-%2015/) | EC2 instance configuration managed through Terraform input variables and validation | Input variables, variable types, defaults, validation rules, AMI data sources |
-| [Using Objects for Volume Configuration](./Using%20Objects%20for%20Volume%20Configuration%20-%2016/) | Refactored EC2 configuration using structured variables and flexible tagging | Terraform objects, maps, `merge()` |
-| [Working with tfvars](./Working%20with%20tfvar%20-%2017/) | Managed environment-specific Terraform configurations using variable definition files | `.tfvars` files, variable overrides, environment configuration |
-| [Working with Locals](./Working%20with%20Locals%20-%2018/) | Centralized reusable configuration values and common resource tags using Terraform locals | Locals, common tags, local objects, `merge()`, Random ID, S3 |
-| [Working with Outputs](./Working%20with%20Outputs%20-%2020/) | Exposed Terraform-managed resource values using output blocks | Terraform outputs, output values, `terraform output`, `-raw` |
-| [For Expressions with Lists](./For%20Expressions%20with%20Lists%20-%2022/) | Manipulated lists and lists of objects using Terraform for expressions | `for` expressions, list transformation, filtering, object attributes |
-| [For Expressions with Maps](./For%20Expressions%20with%20Maps%20-%2023/) | Transformed, filtered, and restructured maps and lists using Terraform for expressions | `for` expressions, maps, list-to-map transformations, filtering, duplicate keys, `keys()` |
-| [Creating Multiple Subnets with count](./Creating%20Multiple%20Subnets%20with%20count%20-%2024/) | Created multiple AWS subnets from a single Terraform resource using the `count` meta-argument | `count`, `count.index`, input variables, VPCs, subnets, CIDR blocks |
+| [Terraform VPC](./Terraform%20VPC%20-%2002/) | Built foundational AWS networking infrastructure using Terraform | VPC, subnets, route tables, Internet Gateway, Terraform |
+| [Terraform S3 Bucket](./Terraform%20S3%20Bucket%20-%2005/) | Provisioned and managed an S3 bucket using Terraform | AWS provider, Random provider, S3, resource references, Terraform state |
+| [Multi-Region S3](./Terraform%20Multi-Region%20S3%20-%2009/) | Deployed S3 infrastructure across multiple AWS regions | Provider aliases, multi-region deployments |
+| [NGINX Server on AWS](./NGINX%20Server%20on%20AWS%20-%2010/) | Deployed a VPC, EC2 instance, and NGINX web server using Terraform | VPC, subnets, routing, security groups, EC2, AMIs, user data |
+| [S3 Static Website](./S3%20Static%20Website/) | Hosted a static website on Amazon S3 using Terraform | S3, bucket policies, public access, static website hosting, objects |
+| [Terraform Configuration & Data Structures](./Input%20Variables%20-%2015/) | Applied variables, locals, objects, `.tfvars`, outputs, and collection transformations to build reusable Terraform configurations | Variables, locals, objects, maps, lists, `for` expressions, outputs |
+| [Creating Multiple Resources with count](./Creating%20Multiple%20Resources%20with%20count%20-%2024/) | Created and referenced multiple AWS resources dynamically using Terraform's `count` meta-argument | `count`, `count.index`, resource indexing, dynamic resource creation |
 
 ## Technologies
 
@@ -37,30 +28,23 @@ version control, and cloud infrastructure design.
 
 ### Terraform & Infrastructure
 
-### Terraform & Infrastructure
-
 - Infrastructure as Code (IaC)
 - Terraform providers & provider configuration
-- Provider aliases & multi-region deployments
+- AWS resource provisioning & management
+- Input variables, variable types, defaults & validation
+- `.tfvars` files & environment-specific configuration
+- Local values, objects & reusable configuration
 - Terraform resources & data sources
-- Input variables, types, defaults & validation
-- Variable overrides & `.tfvars` files
-- Local values & local objects
-- Common tagging with `merge()`
-- Terraform modules
+- Outputs & resource value references
+- `for` expressions & collection transformations
+- Lists, maps & objects
+- `count` meta-argument & indexed resources
 - Terraform state
 - Terraform workflow: `init`, `plan`, `apply`, `destroy`
 - Configuration validation & formatting: `validate`, `fmt`
-- Outputs, output values & `terraform output`
-- `for` expressions & collection manipulation
-- Collection transformations between lists and maps
-- List filtering & object attribute extraction
-- `count` meta-argument & `count.index`
-- Dynamic resource creation
 
 ### AWS Infrastructure
 
-- Amazon VPCs, subnets & routing
 - AWS EC2
 - Amazon Machine Images (AMIs)
 - EC2 user data & cloud-init
@@ -70,6 +54,7 @@ version control, and cloud infrastructure design.
 - S3 bucket policies & public access configuration
 - S3 objects & content types
 - S3 bucket naming with Random ID
+- EC2 instance deployment across multiple subnets
 
 ### Development & Version Control
 
@@ -97,8 +82,8 @@ terraform/
 ├── S3 Static Website/
 │   └── Static website hosted on Amazon S3 with Terraform
 │
-├── Input Variables - 15/ 
-│   └── EC2 instance configuration using input variables and validation 
+├── Input Variables - 15/
+│   └── Terraform configuration, variables, locals, outputs, and data structures
 │
 ├── Using Objects for Volume Configuration - 16/
 │   └── EC2 configuration using objects, maps, and flexible tagging
@@ -118,7 +103,7 @@ terraform/
 ├── For Expressions with Maps - 23/
 │   └── Map and list transformations using Terraform for expressions
 │
-├── Creating Multiple Subnets with count - 24/
-│   └── Multiple AWS subnets created using Terraform count
+├── Creating Multiple Resources with count - 24/
+│   └── Creating and referencing multiple AWS resources with count
 │
 └── README.md

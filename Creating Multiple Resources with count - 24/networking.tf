@@ -10,9 +10,9 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_subnet" "main" {
-# Use the input variable so the number of subnets can be changed
-# without modifying the resource configuration.
-count = var.subnet_count
+  # Use the input variable so the number of subnets can be changed
+  # without modifying the resource configuration.
+  count = var.subnet_count
 
   # Attach every subnet to the VPC created above.
   vpc_id = aws_vpc.main.id

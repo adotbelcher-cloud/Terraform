@@ -9,5 +9,13 @@ variable "subnet_count" {
   type = number
 
   # Create two subnets by default.
-  default = 4
+  default = 2
+}
+
+variable "ec2_instance_count" {
+  # Controls how many EC2 instances Terraform creates.
+  type = number
+
+  # Start with a single instance while testing the configuration.
+  default = 1
 }
