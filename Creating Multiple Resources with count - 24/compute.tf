@@ -79,3 +79,29 @@ resource "aws_instance" "from_list" {
     Project = local.project
   }
 }
+
+# ============================================================
+# EC2 INSTANCES FROM MAP
+# ============================================================
+# Creates one EC2 instance for each entry in
+# var.ec2_instance_config_map.
+#
+# for_each uses the map keys as stable resource identifiers.
+# Each instance gets its AMI and instance type from its
+# corresponding configuration object.
+#
+# Example resource addresses:
+# aws_instance.from_map["ubuntu_1"]
+# aws_instance.from_map["nginx_1"]
+
+resource "aws_instance" "from_map" {
+  for_each      = var.ec2_instance_config_map
+  ami           = local.ami_ids[each.value.ami]
+  instance_type = each.value.instance_type
+  subnet_id     = aws_subnet.main[0].id
+
+  tags = {
+    Name    = "${local.project}-${each.key}"
+    Project = local.project
+  }
+}

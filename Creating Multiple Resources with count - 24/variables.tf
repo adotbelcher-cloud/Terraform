@@ -96,3 +96,28 @@ variable "ec2_instance_config_list" {
     error_message = "At least one of the provided \"ami\" values is not supported.\nSupported \"ami\" values: \"ubuntu\", \"nginx\"."
   }
 }
+
+# ============================================================
+# EC2 INSTANCE CONFIGURATION MAP
+# ============================================================
+# Defines the configuration for multiple EC2 instances using
+# a map of objects.
+#
+# Each map key identifies a specific instance, while the
+# object contains its instance type and friendly AMI name.
+#
+# Example:
+# ubuntu_1 = {
+#   instance_type = "t3.micro"
+#   ami           = "ubuntu"
+# }
+#
+# Using a map allows Terraform to create resources with
+# meaningful, stable identifiers when using for_each.
+
+variable "ec2_instance_config_map" {
+  type = map(object({
+    instance_type = string
+    ami           = string
+  }))
+}
