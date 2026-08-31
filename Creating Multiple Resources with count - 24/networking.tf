@@ -7,8 +7,9 @@
 # VPC
 # └── Multiple subnets
 #
-# The subnet count and CIDR blocks are generated dynamically
-# using the count meta-argument.
+# Subnets are created dynamically using the subnet_config map.
+# Each map key identifies a subnet and each object provides
+# its CIDR block.
 
 
 # ============================================================
@@ -32,33 +33,27 @@ resource "aws_vpc" "main" {
 # ============================================================
 # SUBNETS
 # ============================================================
-# Creates multiple subnets inside the VPC.
+# Creates one subnet for each entry in var.subnet_config.
 #
-# The number of subnets is controlled by var.subnet_count.
-# For example:
+# The map key becomes the subnet identifier.
 #
-# subnet_count = 2
-#   → aws_subnet.main[0]
-#   → aws_subnet.main[1]
+# Example:
 #
-# count.index provides the index of each subnet and is used
-# to generate unique CIDR blocks and resource names.
+# default = {
+#   cidr_block = "10.0.0.0/24"
+# }
+#
+# subnet_1 = {
+#   cidr_block = "10.0.1.0/24"
+# }
 
 resource "aws_subnet" "main" {
-  count = var.subnet_count
-
-  vpc_id = aws_vpc.main.id
-
-  # Generate a unique /24 CIDR block for each subnet.
-  #
-  # [0] → 10.0.0.0/24
-  # [1] → 10.0.1.0/24
-  # [2] → 10.0.2.0/24
-
-  cidr_block = "10.0.${count.index}.0/24"
+  for_each   = var.subnet_config
+  vpc_id     = aws_vpc.main.id
+  cidr_block = each.value.cidr_block
 
   tags = {
     Project = local.project
-    Name    = "${local.project}-${count.index}"
+    Name    = "${local.project}-${each.key}"
   }
 }

@@ -71,6 +71,7 @@ variable "ec2_instance_config_list" {
   type = list(object({
     instance_type = string
     ami           = string
+    subnet_name   = optional(string, "default")
   }))
 
   # No list-based instances are created unless configurations
@@ -98,7 +99,6 @@ variable "ec2_instance_config_list" {
 }
 
 # ============================================================
-# ============================================================
 # EC2 INSTANCE CONFIGURATION MAP
 # ============================================================
 # Defines the configuration for multiple EC2 instances using
@@ -114,6 +114,7 @@ variable "ec2_instance_config_map" {
   type = map(object({
     instance_type = string
     ami           = string
+    subnet_name   = optional(string, "default")
   }))
 
   validation {
@@ -132,5 +133,34 @@ variable "ec2_instance_config_map" {
     ])
 
     error_message = "At least one of the provided \"ami\" values is not supported.\nSupported \"ami\" values: \"ubuntu\", \"nginx\"."
+  }
+}
+
+# ============================================================
+# SUBNET CONFIGURATION
+# ============================================================
+# Defines the subnets Terraform should create.
+#
+# Each map key becomes the subnet's identifier.
+# Each object contains the CIDR block for that subnet.
+#
+# Example:
+#
+# default = {
+#   cidr_block = "10.0.0.0/24"
+# }
+
+variable "subnet_config" {
+  type = map(object({
+    cidr_block = string
+  }))
+
+  validation {
+    condition = alltrue([
+      for config in values(var.subnet_config) :
+      can(cidrnetmask(config.cidr_block))
+    ])
+
+    error_message = "At least one of the provided CIDR blocks is not valid."
   }
 }
