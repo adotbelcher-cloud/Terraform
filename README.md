@@ -16,6 +16,7 @@ The projects and exercises demonstrate practical experience with Infrastructure 
 | [S3 Static Website](./S3%20Static%20Website/) | Hosted a static website on Amazon S3 using Terraform | S3, bucket policies, public access, static website hosting, objects |
 | [Terraform Configuration & Data Structures](./Input%20Variables%20-%2015/) | Applied variables, locals, objects, `.tfvars`, outputs, and collection transformations to build reusable Terraform configurations | Variables, locals, objects, maps, lists, `for` expressions, outputs |
 | [Creating Multiple Resources with count](./Creating%20Multiple%20Resources%20with%20count%20-%2024/) | Created and referenced multiple AWS resources dynamically using Terraform's `count` meta-argument | `count`, `count.index`, resource indexing, dynamic resource creation |
+| [Managing IAM Users and Roles](./Managing%20IAM%20Users%20and%20Roles/) | Managed AWS IAM users and roles using Terraform and YAML-based configuration | IAM users, IAM roles, trust policies, `for_each`, YAML, `yamldecode()`, policy attachments |
 
 ## Technologies
 
@@ -39,9 +40,16 @@ The projects and exercises demonstrate practical experience with Infrastructure 
 - `for` expressions & collection transformations
 - Lists, maps & objects
 - `count` meta-argument & indexed resources
+- `for_each` meta-argument & map-based resources
 - Terraform state
 - Terraform workflow: `init`, `plan`, `apply`, `destroy`
 - Configuration validation & formatting: `validate`, `fmt`
+- YAML configuration & `yamldecode()`
+- IAM users & console login profiles
+- IAM roles & role policy attachments
+- IAM trust policies with `aws_iam_policy_document`
+- Role-based access control (RBAC)
+- Sensitive Terraform outputs
 
 ### AWS Infrastructure
 
@@ -55,6 +63,12 @@ The projects and exercises demonstrate practical experience with Infrastructure 
 - S3 objects & content types
 - S3 bucket naming with Random ID
 - EC2 instance deployment across multiple subnets
+- AWS Identity and Access Management (IAM)
+- IAM users
+- IAM roles
+- IAM policies & policy attachments
+- IAM trust policies
+- Role assumption controls
 
 ### Development & Version Control
 
@@ -78,7 +92,7 @@ terraform/
 │
 ├── NGINX Server on AWS - 10/
 │   └── AWS VPC, EC2, security group, and NGINX web server
-|
+│
 ├── S3 Static Website/
 │   └── Static website hosted on Amazon S3 with Terraform
 │
@@ -105,5 +119,8 @@ terraform/
 │
 ├── Creating Multiple Resources with count - 24/
 │   └── Creating and referencing multiple AWS resources with count
+│
+├── Managing IAM Users and Roles/
+│   └── IAM users, roles, trust policies, and YAML-based user configuration
 │
 └── README.md
